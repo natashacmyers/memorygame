@@ -6,9 +6,9 @@ body {
 }
 
 img {
-min-height: 150px;
-width: 150px;
-padding: 10px;
+min-height: 200px;
+width: 200px;
+padding: 20px;
 }
 
 .intro h1 , .intro h6{
@@ -20,13 +20,18 @@ padding: 10px;
 }
 
 .intro h1 {
-    font-size: 100px;
+    font-size: 90px;
+    color: lightgray;
 }
 
 .intro h6 {
-    font-size: 50px;
+    font-size: 30px;
 }
 
 .flowerrow1 {
-    padding-top: 20px;
+    padding-top: 30px;
+}
+
+.flowerrow2 {
+    padding-bottom: 60px;
 }
