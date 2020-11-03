@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+body {
+  background: grey;  
+  height: 100vh;
+}
+
+img {
+min-height: 150px;
+width: 150px;
+padding: 10px;
+}
+
+.intro h1 , .intro h6{
+    
+    font-family: "Itim", sans-serif;
+    color: white;
+    text-align: center;
+    padding: 10px 150px 10px 150px;
+}
+
+.intro h1 {
+    font-size: 100px;
+}
+
+.intro h6 {
+    font-size: 50px;
+}
+
+.flowerrow1 {
+    padding-top: 20px;
+}
