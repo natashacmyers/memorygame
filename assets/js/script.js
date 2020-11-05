@@ -1,16 +1,16 @@
 const flowers = document.querySelectorAll('.flower');
 
-function rotateFlower () {
-    if (this.classList.contains("rotate")) {
-        this.classList.remove("rotate");
-        this.classList.add("rotateAgain");
+function flashFlower () {
+    if (this.classList.contains("flash")) {
+        this.classList.remove("flash");
+        this.classList.add("flashAgain");
     }
-    else if (this.classList.contains("rotateAgain")) {
-        this.classList.remove("rotateAgain");
-        this.classList.add("rotate");
+    else if (this.classList.contains("flashAgain")) {
+        this.classList.remove("flashAgain");
+        this.classList.add("flash");
     }
     else {
-        this.classList.add("rotate");
+        this.classList.add("flash");
     }
     
 }

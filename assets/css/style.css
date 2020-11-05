@@ -1,15 +1,24 @@
+/* -------------------------- General----------------------------------- */
+
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
 
 body {
   background: grey;  
   height: 100vh;
 }
 
-img {
-height: 200px;
-width: 200px;
-padding: 20px;
+
+/* -------------------------- Header ----------------------------------- */
+
+.headerbackground {
+    background-color: darkgrey;
+    min-height: 50px;
+    
 }
+
+/* -------------------------- Index Section ----------------------------------- */
+
 
 .intro h1 , .intro h6{
     
@@ -28,6 +37,12 @@ padding: 20px;
     font-size: 30px;
 }
 
+img {
+height: 200px;
+width: 200px;
+padding: 20px;
+}
+
 .flowerrow1 {
     padding-top: 30px;
 }
@@ -36,11 +51,26 @@ padding: 20px;
     padding-bottom: 60px;
 }
 
-.rotate {
-  transform: rotate(30deg);
+.flash {
+animation-name: invertColour;
+animation-duration: 0.3s;
 }
 
-.rotateAgain {
-  transform: rotate(-30deg);
+.flashAgain {
+animation-name: invertColourreverse;
+animation-duration: 0.4s;
 }
+
+@keyframes invertColour {
+from {filter: invert(0%); }
+  to {filter: invert(100%);}
+}    
+
+@keyframes invertColourreverse {
+from {filter: invert(100%); }
+  to {filter: invert(0%);}
+}    
+/* -------------------------- Contact Section ----------------------------------- */
+
+
 
