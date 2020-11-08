@@ -50,23 +50,9 @@ body  {
     border-radius: 200px; 
 }
 .startButtonPressed {
-    animation-name: startButtonAnimation;
-    animation-duration: 0.2s;
-}
-.startButtonPressedAgain {
-    animation-name: startButtonAnimationAgain;
-    animation-duration: 0.2s;
+    background-color: red !important;
 }
 
-@keyframes startButtonAnimation {
-    from {background-color: white;}
-    to {background-color: red;}
-}
-
-@keyframes startButtonAnimationAgain {
-    from {background-color: red;}
-    to {background-color: white;}
-}
 
 img {
 height: 200px;
