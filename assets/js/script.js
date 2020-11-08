@@ -6,7 +6,7 @@ let turn;
 let good;
 let compTurn;
 let intervalId;
-let on = false;
+let startGame = false;
 let win;
 
 const levelCounter = document.querySelector(".levelcount");
@@ -55,13 +55,19 @@ function resetButtonClick () {
 
 
 function startButtonOn () {
-     if (this.classList.contains("startButtonPressed")) {
+   if (this.classList.contains("startButtonPressed")) {
         this.classList.remove("startButtonPressed");
-        document.getElementById("startbutton").innerHTML = "Start";
+        this.classList.add("startButtonPressedAgain");
+        play();
+    }
+    else if (this.classList.contains("startButtonPressedAgain")) {
+        this.classList.remove("startButtonPressedAgain");
+        this.classList.add("startButtonPressed");
+        play();
     }
     else {
         this.classList.add("startButtonPressed");
-        document.getElementById("startbutton").innerHTML = "Pause";
+        play();
     }
 }
 
@@ -72,8 +78,5 @@ start.addEventListener('click', startButtonOn);
 reset.addEventListener('click', resetButtonClick);      
 
 
-/* ---------------------- Computer's Turn --------------- */
+/* ---------------------- Play --------------- */
 
-
-
-/* ----------------------- User's Turn --------------------- */

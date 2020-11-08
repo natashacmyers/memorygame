@@ -39,7 +39,7 @@ body  {
     font-size: 30px;
 }
 
-#startbutton, #resetbutton {
+#startbutton {
     padding-top: 10px;
     background-color: white;
     font-size: 50px;
@@ -50,28 +50,23 @@ body  {
     border-radius: 200px; 
 }
 .startButtonPressed {
-    background-color: red !important;
+    animation-name: startButtonAnimation;
+    animation-duration: 0.2s;
+}
+.startButtonPressedAgain {
+    animation-name: startButtonAnimationAgain;
+    animation-duration: 0.2s;
 }
 
-.resetButtonPressed {
-    animation-name: resetbuttonanimation;
-    animation-duration: 0.1s;
+@keyframes startButtonAnimation {
+    from {background-color: white;}
+    to {background-color: red;}
 }
 
-.resetButtonPressedAgain {
-    animation-name: resetbuttonanimationreverse;
-    animation-duration: 0.1s;
+@keyframes startButtonAnimationAgain {
+    from {background-color: red;}
+    to {background-color: white;}
 }
-
-@keyframes resetbuttonanimation {
-from {background-color: white; }
-  to {background-color: red;}
-}    
-
-@keyframes resetbuttonanimationreverse {
-from {background-color: red; }
-  to {background-color: white;}
-}    
 
 img {
 height: 200px;
