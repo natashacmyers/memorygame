@@ -30,12 +30,12 @@
     </header>
 	<section>
 		<div class="container">
-			<div class="row intro">
-				<div class="col-12 d-flex justify-content-center">
+			<div class="row">
+				<div class="col-12 d-flex justify-content-center intro">
 					<h1>Welcome to Beemember!</h1>
 
 				</div>
-				<div class="col-12 d-flex justify-content-center">
+				<div class="col-12 d-flex justify-content-center intro">
 
 					<h6>You are trying to help your bee friend to collect enough pollen for her hive. She does not know
 						which
@@ -44,39 +44,63 @@
 						flowers, she will reward you with honey, but if you fail she will sting you!</h6>
 
 				</div>
-				<div class="col-12 d-flex justify-content-center">
+				<div class="col-12 d-flex justify-content-center intro">
 
 					<h6>Watch the flowers appear and remember the order, once the bee sets off you must click on the
 						flowers
 						in the correct order to complete the game. </h6>
 				</div>
+                <div class="col-12 d-flex justify-content-center">
+
+					<h6 id="startbutton"> Start </h6>
+				</div>
 			</div>
 			<div class="row flowerrow1">
-				<div class="col-12 d-flex justify-content-center">
-					<div class="flower">
+                <div class="col-1 stings">
+                    Stings 
+                </div>
+				<div class="col-10 d-flex justify-content-center">
+					<div class="flower pink-flower">
 						<img src="assets/images/pink-flower.png" alt="Pink Flower">
             </div>
-						<div class="flower">
+                
+						<div class="flower blue-flower">
 							<img src="assets/images/blue-flower.png" alt="Blue Flower">
             </div>
-							<div class="flower">
+							<div class="flower green-flower">
 								<img src="assets/images/green-flower.png" alt="Green Flower">
             </div>
 							</div>
-						</div>
-						<div class="row flowerrow2">
-							<div class="col-12 d-flex justify-content-center">
-								<div class="flower">
+                            <div class="col-1 level">
+                    Level
+                </div>
+			</div>
+                       
+			<div class="row flowerrow2">
+                        <div class="col-1 stingscount">
+                            0
+                        </div>
+							<div class="col-10 d-flex justify-content-center">
+								<div class="flower purple-flower">
 									<img src="assets/images/purple-flower.png" alt="Purple Flower">
             </div>
-									<div class="flower">
+									<div class="flower red-flower">
 										<img src="assets/images/red-flower.png" alt="Red Flower">
             </div>
-										<div class="flower">
+										<div class="flower yellow-flower">
 											<img src="assets/images/yellow-flower.png" alt="Yellow Flower">
             </div>
 										</div>
-									</div>
+                                        <div class="col-1 levelcount">
+                                    0
+                                    </div>
+				</div>
+            <div class="row ">
+                <div class="col-12 topscorerow">
+                    <h6 class="topscore">Top Score:</h6>
+                    <h6 class="topscorecount">0</h6>
+                </div>
+            </div>                    
 								</div>
 	</section>
 

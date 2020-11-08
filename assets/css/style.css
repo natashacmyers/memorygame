@@ -18,13 +18,15 @@ body {
 }
 
 /* -------------------------- Index Section ----------------------------------- */
-
-
-.intro h1 , .intro h6{
-    
+body  {
     font-family: "Itim", sans-serif;
     color: white;
     text-align: center;
+
+}
+
+.intro h1 , .intro h6{
+    
     padding: 10px 150px 10px 150px;
 }
 
@@ -35,6 +37,20 @@ body {
 
 .intro h6 {
     font-size: 30px;
+}
+
+#startbutton {
+    padding-top: 10px;
+    background-color: white;
+    font-size: 50px;
+    font-family: "Itim", sans-serif;
+    color: black;
+    text-align: center;
+    padding: 10px 150px 10px 150px;
+    border-radius: 200px; 
+}
+.startButtonPressed {
+    background-color: red !important;
 }
 
 img {
@@ -48,7 +64,7 @@ padding: 20px;
 }
 
 .flowerrow2 {
-    padding-bottom: 60px;
+    padding-bottom: 30px;
 }
 
 .flash {
@@ -70,6 +86,29 @@ from {filter: invert(0%); }
 from {filter: invert(100%); }
   to {filter: invert(0%);}
 }    
+
+.stings, .level , .stingscount, .levelcount{
+ font-size: 40px;
+}
+
+.stingscount, .levelcount {
+    color: darkred;
+}
+
+.topscorerow {
+    padding-bottom: 60px;
+    
+}
+
+.topscore, .topscorecount {
+    display: inline-block;
+    font-size: 40px;
+}
+
+.topscorecount {
+    padding-left: 5px;
+    color: darkblue;
+}
 /* -------------------------- Contact Section ----------------------------------- */
 
 
