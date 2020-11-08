@@ -16,10 +16,12 @@ const greenFlower = document.querySelector(".green-flower");
 const pinkFlower = document.querySelector(".pink-flower");
 const purpleFlower = document.querySelector(".purple-flower");
 const redFlower = document.querySelector(".red-flower");
+
 /* ----------------- User Buttons ------------------ */
 
 const flowers = document.querySelectorAll('.flower');
 const start = document.querySelector('#startbutton');
+const reset = document.querySelector('#resetbutton');
 
 function userFlashFlower () {
     if (this.classList.contains("flash")) {
@@ -36,6 +38,21 @@ function userFlashFlower () {
     
 }
 
+function resetButtonClick () {
+    if (this.classList.contains("resetButtonPressed")) {
+        this.classList.remove("resetButtonPressed");
+        this.classList.add("resetButtonPressedAgain");
+    }
+    else if (this.classList.contains("resetButtonPressedAgain")) {
+        this.classList.remove("resetButtonPressedAgain");
+        this.classList.add("resetButtonPressed");
+    }
+    else {
+        this.classList.add("resetButtonPressed");
+    }
+    
+}
+
 
 function startButtonOn () {
      if (this.classList.contains("startButtonPressed")) {
@@ -48,8 +65,11 @@ function startButtonOn () {
     }
 }
 
+
+
 flowers.forEach(flower => flower.addEventListener('click', userFlashFlower));
 start.addEventListener('click', startButtonOn);
+reset.addEventListener('click', resetButtonClick);      
 
 
 /* ---------------------- Computer's Turn --------------- */

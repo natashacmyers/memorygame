@@ -39,7 +39,7 @@ body  {
     font-size: 30px;
 }
 
-#startbutton {
+#startbutton, #resetbutton {
     padding-top: 10px;
     background-color: white;
     font-size: 50px;
@@ -52,6 +52,26 @@ body  {
 .startButtonPressed {
     background-color: red !important;
 }
+
+.resetButtonPressed {
+    animation-name: resetbuttonanimation;
+    animation-duration: 0.1s;
+}
+
+.resetButtonPressedAgain {
+    animation-name: resetbuttonanimationreverse;
+    animation-duration: 0.1s;
+}
+
+@keyframes resetbuttonanimation {
+from {background-color: white; }
+  to {background-color: red;}
+}    
+
+@keyframes resetbuttonanimationreverse {
+from {background-color: red; }
+  to {background-color: white;}
+}    
 
 img {
 height: 200px;
@@ -69,12 +89,12 @@ padding: 20px;
 
 .flash {
 animation-name: invertColour;
-animation-duration: 0.3s;
+animation-duration: 0.1s;
 }
 
 .flashAgain {
 animation-name: invertColourreverse;
-animation-duration: 0.4s;
+animation-duration: 0.1s;
 }
 
 @keyframes invertColour {
