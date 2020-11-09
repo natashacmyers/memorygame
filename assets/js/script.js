@@ -62,7 +62,7 @@ function clearInvertColour() {
 every 800 milliseconds */
 function play () {
 win = false;
-
+good = true;
 order = [];
 playerOrder = [];
 flash = 0;
@@ -70,6 +70,7 @@ level = 1;
 levelCounter.innerHTML = 1;
 for (var i = 0; i < 20; i++){
    order.push(Math.floor(Math.random() * 6) + 1);
+   
 }
 
 compTurn = true;
@@ -86,11 +87,11 @@ function gameTurn () {
      clearInterval(intervalId);
      console.log("computer is done");
      console.log("flash is " + flash);
-     console.log("level is" + level);
+     console.log("level is " + level);
      
  }
  if (compTurn) {
-    console.log (flash);
+    console.log ("flash is now: " + flash);
      clearInvertColour();
      setTimeout(() => {
         if (order[flash] === 1) {
@@ -262,18 +263,19 @@ yellowFlower.addEventListener('click', yellowFlowerPressed);
 /* ---------------------- Checking the User's Choice --------------- */
 
 function check () {
-if (playerOrder[playerOrder.length - 1] != order[order.length - 1]) {
-    console.log("player did not answer correctly");
-    console.log(playerOrder[playerOrder.length - 1]);
-    console.log(order[order.length -1]);
-    console.log(order);
+    
+if (playerOrder[flash-1] != order[flash-1]) {
+    console.log("the player has chosen an incorrect flower");
     good = false;
 }
+console.log(good);
 if (playerOrder.length == 20 && good) {
     console.log("player won the game");
     winGame();
 }
-if (good = false) {
+console.log(good);
+
+if (good === false) {
     console.log("player did not answer correctly and a sting has been added");
     alert("Ouch! You took Bumble to a poisonous flower, so she stung you!");
     stings++;
@@ -295,8 +297,12 @@ if (good = false) {
 }
 
 }
+console.log(good);
+console.log(level);
+console.log(playerOrder.length);
 
-if (level == playerOrder.length && good && !win) {
+console.log(win);
+if (level === playerOrder.length && good && !win) {
     console.log("player has chosen correctly");
     level++;
     playerOrder = [];
