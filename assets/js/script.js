@@ -9,6 +9,7 @@ let intervalId;
 let startGame = false;
 let win;
 let stings;
+let on;
 
 const levelCounter = document.querySelector(".levelcount");
 const yellowFlower = document.querySelector(".yellow-flower");
@@ -18,7 +19,7 @@ const pinkFlower = document.querySelector(".pink-flower");
 const purpleFlower = document.querySelector(".purple-flower");
 const redFlower = document.querySelector(".red-flower");
 
-/* ----------------- User Buttons ------------------ */
+/* ----------------- Start Button ------------------ */
 
 
 const start = document.querySelector('#startbutton');
@@ -26,20 +27,16 @@ const start = document.querySelector('#startbutton');
 
 
 function startButtonOn () {
-   if (this.classList.contains("startButtonPressed")) {
+    if (this.classList.contains("startButtonPressed")){
         this.classList.remove("startButtonPressed");
-        clearInterval(intervalId);
-        clearInvertColour();
-        levelCounter.innerHTML = 0;
         document.getElementById("startbutton").innerHTML = "Start";
+        clearInterval(intervalId);
         
     }
-   
     else {
         this.classList.add("startButtonPressed");
-        document.getElementById("startbutton").innerHTML = "Stop";
+         document.getElementById("startbutton").innerHTML = "Stop";
         play();
-        
     }
 }
 
@@ -47,14 +44,25 @@ function startButtonOn () {
 
 start.addEventListener('click', startButtonOn);
      
+/* ---------------------- Repeatedly called functions  --------------- */
 
+/* this function is used to clear the inverted colours of the flowers after they have been flashed */
+function clearInvertColour() {
+      pinkFlower.classList.remove("flash");
+      blueFlower.classList.remove("flash");
+      greenFlower.classList.remove("flash");
+      purpleFlower.classList.remove("flash");
+      redFlower.classList.remove("flash");
+      yellowFlower.classList.remove("flash");
+}
 
 /* ---------------------- Computer's Play --------------- */
 
-
+/* play function, sets the order for the computer to play the 20 rounds, then sets an interval to play the function 
+every 800 milliseconds */
 function play () {
 win = false;
-good = true;
+
 order = [];
 playerOrder = [];
 flash = 0;
@@ -63,20 +71,26 @@ levelCounter.innerHTML = 1;
 for (var i = 0; i < 20; i++){
    order.push(Math.floor(Math.random() * 6) + 1);
 }
-compTurn = true;
 
+compTurn = true;
+intervalId = setInterval (gameTurn, 800);
 }
 
-
+/* Game turn function, firstly checks if the computer is still playing, if the computer is still playing
+then should flash the nth number in the order, going up from 1 until the first if statement is true */
 function gameTurn () {
     on = false;
- if (flash > levelCounter) {
+ if (flash == level) {
      compTurn = false;
      on = true;
+     clearInterval(intervalId);
+     console.log("computer is done");
+     console.log("flash is " + flash);
+     console.log("level is" + level);
      
  }
- if (compTurn == true) {
-   
+ if (compTurn) {
+    console.log (flash);
      clearInvertColour();
      setTimeout(() => {
         if (order[flash] === 1) {
@@ -98,45 +112,70 @@ function gameTurn () {
             six();
         }
         flash++;
+        
      }, 200);
+    
+
  }
 }
 
-function clearInvertColour() {
-      pinkFlower.classList.remove("flash");
-      blueFlower.classList.remove("flash");
-      greenFlower.classList.remove("flash");
-      purpleFlower.classList.remove("flash");
-      redFlower.classList.remove("flash");
-      yellowFlower.classList.remove("flash");
-};
+/* the following functions describe what each flower should do when caled upon */
 
 function one () {
     pinkFlower.classList.add("flash");
-    
+    setTimeout(() => {
+        clearInvertColour();
+    }, 200);
+  
 }
+
 function two () {
     blueFlower.classList.add("flash");    
+    setTimeout(() => {
+        clearInvertColour();
+    }, 200);
+  
     
 }
 function three () {
     greenFlower.classList.add("flash");
+    setTimeout(() => {
+        clearInvertColour();
+    }, 200);
+  
    
 }
 function four () {
     purpleFlower.classList.add("flash");
+    setTimeout(() => {
+        clearInvertColour();
+    }, 200);
+  
    
 }
 function five () {
     redFlower.classList.add("flash");
+    setTimeout(() => {
+        clearInvertColour();
+    }, 200);
+  
     
 }
 function six () {
     yellowFlower.classList.add("flash");
+   setTimeout(() => {
+        clearInvertColour();
+    }, 200);
+  
  
 }
 
+
 /* ---------------------- User's Play --------------- */
+
+/* once the computer has played, the user is allowed to play, the following functions show what 
+happens when the user pressed a flower. The users choices are added to an array called 'playerOrder', and
+the check() function is used to check if the user was correct */
 
 function pinkFlowerPressed () {
     if (on) {
@@ -211,6 +250,7 @@ function yellowFlowerPressed () {
         }
     }
 }
+
 pinkFlower.addEventListener('click', pinkFlowerPressed);
 blueFlower.addEventListener('click', blueFlowerPressed);
 greenFlower.addEventListener('click', greenFlowerPressed);
@@ -222,38 +262,49 @@ yellowFlower.addEventListener('click', yellowFlowerPressed);
 /* ---------------------- Checking the User's Choice --------------- */
 
 function check () {
-if (playerOrder[playerOrder.length -1] != order[order.length - 1]) {
+if (playerOrder[playerOrder.length - 1] != order[order.length - 1]) {
+    console.log("player did not answer correctly");
+    console.log(playerOrder[playerOrder.length - 1]);
+    console.log(order[order.length -1]);
+    console.log(order);
     good = false;
 }
 if (playerOrder.length == 20 && good) {
+    console.log("player won the game");
     winGame();
 }
 if (good = false) {
+    console.log("player did not answer correctly and a sting has been added");
     alert("Ouch! You took Bumble to a poisonous flower, so she stung you!");
     stings++;
     stingsFunction ();
-}
-if (stings < 19) {
-    loseGame();
-}
+        if (stings < 19) {
+            console.log("player has lost the game");
+        loseGame();
+        }
 
-else {
-    setTimeout (() => {
+        else {
+            console.log("player has been stung but has not lost yet");
+        setTimeout (() => {
+        level++;
         compTurn = true;
-        flash = 0;
         playerOrder = [];
         good = true;
         intervalId = setInterval(gameTurn, 800);
-    } ,800)
+        } ,800)
 }
 
-if (level = playerOrder.length && good && !win) {
+}
+
+if (level == playerOrder.length && good && !win) {
+    console.log("player has chosen correctly");
     level++;
     playerOrder = [];
     compTurn = true;
     flash = 0;
     levelCounter.innerHTML = level;
     intervalId = setInterval(gameTurn, 800);
+    
 }
 }
 

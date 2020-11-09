@@ -73,20 +73,13 @@ animation-name: invertColour;
 animation-duration: 0.1s;
 }
 
-.flashAgain {
-animation-name: invertColourreverse;
-animation-duration: 0.1s;
-}
 
 @keyframes invertColour {
 from {filter: invert(0%); }
   to {filter: invert(100%);}
 }    
 
-@keyframes invertColourreverse {
-from {filter: invert(100%); }
-  to {filter: invert(0%);}
-}    
+
 
 .stings, .level , .stingscount, .levelcount{
  font-size: 40px;
