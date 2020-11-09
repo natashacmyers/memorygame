@@ -54,10 +54,10 @@ start.addEventListener('click', startButtonOn);
 
 function play () {
 win = false;
+good = true;
 order = [];
 playerOrder = [];
 flash = 0;
-
 level = 1;
 levelCounter.innerHTML = 1;
 // for (var i = 0; i < 20; i++){
@@ -221,3 +221,46 @@ greenFlower.addEventListener('click', greenFlowerPressed);
 purpleFlower.addEventListener('click', purpleFlowerPressed);
 redFlower.addEventListener('click', redFlowerPressed);
 yellowFlower.addEventListener('click', yellowFlowerPressed);
+
+
+/* ---------------------- Checking the User's Choice --------------- */
+
+function check () {
+if (playerOrder[playerOrder.length -1] != order[order.length - 1]) {
+    good = false;
+}
+if (playerOrder.length == 20 && good) {
+    winGame();
+}
+if (good = false) {
+    alert("Ouch! You took Bumble to a poisonous flower, so she stung you!");
+    stings++;
+    stingsFunction ();
+}
+if (stings < 19) {
+    loseGame();
+}
+
+else {
+    setTimeout (() => {
+        compTurn = true;
+        flash = 0;
+        playerOrder = [];
+        good = true;
+        intervalId = setInterval(gameTurn, 800);
+    } ,800)
+}
+
+}
+
+function stingsFunction () {
+    document.getElementById(stingscount) == stings;
+}
+
+loseGame () {
+
+}
+
+winGame () {
+
+}
