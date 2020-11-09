@@ -60,14 +60,10 @@ playerOrder = [];
 flash = 0;
 level = 1;
 levelCounter.innerHTML = 1;
-// for (var i = 0; i < 20; i++){
-//     order.push(Math.floor(Math.random() * 6) + 1);
-// }
-compTurn = true;
-for (var i = 0; i < flash + 1; i++) {
-    order.push(Math.floor(Math.random() * 6) + 1);
-intervalId = setInterval(gameTurn, 800);
+for (var i = 0; i < 20; i++){
+   order.push(Math.floor(Math.random() * 6) + 1);
 }
+compTurn = true;
 
 }
 
@@ -251,16 +247,35 @@ else {
     } ,800)
 }
 
+if (level = playerOrder.length && good && !win) {
+    level++;
+    playerOrder = [];
+    compTurn = true;
+    flash = 0;
+    levelCounter.innerHTML = level;
+    intervalId = setInterval(gameTurn, 800);
+}
 }
 
 function stingsFunction () {
     document.getElementById(stingscount) == stings;
 }
 
-loseGame () {
-
+function loseGame () {
+    alert("You got stung too many times! You need to go to hospital! To play again press start.");
+    document.getElementById("topscorecount") = levelCounter;
+    clearInterval(intervalId);
+    levelCounter.innerHTML = 0;
+    stings = 0;
+    stingsFunction();
+    on = false;
 }
 
-winGame () {
-
+function winGame () {
+    alert("Well done! Bumble has enough honey for winter now! You WIN :) ");
+    clearInterval(intervalId);
+    levelCounter.innerHTML = 0;
+    stings = 0;
+    stingsFunction();
+    on = false;
 }
