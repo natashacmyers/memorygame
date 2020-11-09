@@ -20,24 +20,8 @@ const redFlower = document.querySelector(".red-flower");
 
 /* ----------------- User Buttons ------------------ */
 
-const flowers = document.querySelectorAll('.flower');
+
 const start = document.querySelector('#startbutton');
-
-
-function userFlashFlower () {
-    if (this.classList.contains("flash")) {
-        this.classList.remove("flash");
-        this.classList.add("flashAgain");
-    }
-    else if (this.classList.contains("flashAgain")) {
-        this.classList.remove("flashAgain");
-        this.classList.add("flash");
-    }
-    else {
-        this.classList.add("flash");
-    }
-    
-}
 
 
 
@@ -61,26 +45,30 @@ function startButtonOn () {
 
 
 
-flowers.forEach(flower => flower.addEventListener('click', userFlashFlower));
 start.addEventListener('click', startButtonOn);
      
 
 
-/* ---------------------- Play --------------- */
+/* ---------------------- Computer's Play --------------- */
+
 
 function play () {
 win = false;
 order = [];
 playerOrder = [];
 flash = 0;
-intervalId = 0;
+
 level = 1;
 levelCounter.innerHTML = 1;
-for (var i = 0; i < 20; i++){
-    order.push(Math.floor(Math.random() * 6) + 1);
-}
+// for (var i = 0; i < 20; i++){
+//     order.push(Math.floor(Math.random() * 6) + 1);
+// }
 compTurn = true;
+for (var i = 0; i < flash + 1; i++) {
+    order.push(Math.floor(Math.random() * 6) + 1);
 intervalId = setInterval(gameTurn, 800);
+}
+
 }
 
 
@@ -89,10 +77,10 @@ function gameTurn () {
  if (flash > levelCounter) {
      compTurn = false;
      on = true;
-     console.log("computers done");
+     
  }
  if (compTurn == true) {
-     console.log("computer go");
+   
      clearInvertColour();
      setTimeout(() => {
         if (order[flash] === 1) {
@@ -129,25 +117,107 @@ function clearInvertColour() {
 
 function one () {
     pinkFlower.classList.add("flash");
-    console.log("pink");
+    
 }
 function two () {
     blueFlower.classList.add("flash");    
-    console.log("blue");
+    
 }
 function three () {
     greenFlower.classList.add("flash");
-    console.log("green");
+   
 }
 function four () {
     purpleFlower.classList.add("flash");
-    console.log("purple");
+   
 }
 function five () {
     redFlower.classList.add("flash");
-    console.log("red");
+    
 }
 function six () {
     yellowFlower.classList.add("flash");
-    console.log("yellow");
+ 
 }
+
+/* ---------------------- User's Play --------------- */
+
+function pinkFlowerPressed () {
+    if (on) {
+        playerOrder.push(1);
+        check();
+        one();
+        if (!win){
+            setTimeout(() => {
+                clearInvertColour;
+            }, 300)
+        }
+    }
+}
+
+function blueFlowerPressed () {
+    if (on) {
+        playerOrder.push(2);
+        check();
+        two();
+        if (!win){
+            setTimeout(() => {
+                clearInvertColour;
+            }, 300)
+        }
+    }
+}
+function greenFlowerPressed () {
+    if (on) {
+        playerOrder.push(3);
+        check();
+        three();
+        if (!win){
+            setTimeout(() => {
+                clearInvertColour;
+            }, 300)
+        }
+    }
+}
+function purpleFlowerPressed () {
+    if (on) {
+        playerOrder.push(4);
+        check();
+        four();
+        if (!win){
+            setTimeout(() => {
+                clearInvertColour;
+            }, 300)
+        }
+    }
+}
+function redFlowerPressed () {
+    if (on) {
+        playerOrder.push(5);
+        check();
+        five();
+        if (!win){
+            setTimeout(() => {
+                clearInvertColour;
+            }, 300)
+        }
+    }
+}
+function yellowFlowerPressed () {
+    if (on) {
+        playerOrder.push(6);
+        check();
+        six();
+        if (!win){
+            setTimeout(() => {
+                clearInvertColour;
+            }, 300)
+        }
+    }
+}
+pinkFlower.addEventListener('click', pinkFlowerPressed);
+blueFlower.addEventListener('click', blueFlowerPressed);
+greenFlower.addEventListener('click', greenFlowerPressed);
+purpleFlower.addEventListener('click', purpleFlowerPressed);
+redFlower.addEventListener('click', redFlowerPressed);
+yellowFlower.addEventListener('click', yellowFlowerPressed);
