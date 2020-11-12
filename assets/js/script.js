@@ -68,6 +68,7 @@ playerOrder = [];
 flash = 0;
 level = 1;
 levelCounter.innerHTML = 1;
+stings = 0;
 for (var i = 0; i < 20; i++){
    order.push(Math.floor(Math.random() * 6) + 1);
    
@@ -181,7 +182,9 @@ the check() function is used to check if the user was correct */
 function pinkFlowerPressed () {
     if (on) {
         playerOrder.push(1);
-        check();
+        if (playerOrder.length == level) {
+            check();
+        }
         one();
         if (!win){
             setTimeout(() => {
@@ -194,7 +197,9 @@ function pinkFlowerPressed () {
 function blueFlowerPressed () {
     if (on) {
         playerOrder.push(2);
-        check();
+       if (playerOrder.length == level) {
+            check();
+        }
         two();
         if (!win){
             setTimeout(() => {
@@ -206,7 +211,9 @@ function blueFlowerPressed () {
 function greenFlowerPressed () {
     if (on) {
         playerOrder.push(3);
-        check();
+         if (playerOrder.length == level) {
+            check();
+        }
         three();
         if (!win){
             setTimeout(() => {
@@ -218,7 +225,9 @@ function greenFlowerPressed () {
 function purpleFlowerPressed () {
     if (on) {
         playerOrder.push(4);
-        check();
+         if (playerOrder.length == level) {
+            check();
+        }
         four();
         if (!win){
             setTimeout(() => {
@@ -230,7 +239,9 @@ function purpleFlowerPressed () {
 function redFlowerPressed () {
     if (on) {
         playerOrder.push(5);
-        check();
+         if (playerOrder.length == level) {
+            check();
+        }
         five();
         if (!win){
             setTimeout(() => {
@@ -242,7 +253,9 @@ function redFlowerPressed () {
 function yellowFlowerPressed () {
     if (on) {
         playerOrder.push(6);
-        check();
+         if (playerOrder.length == level) {
+            check();
+        }
         six();
         if (!win){
             setTimeout(() => {
@@ -283,8 +296,10 @@ if (good === false) {
     console.log("player did not answer correctly and a sting has been added");
     alert("Ouch! You took Bumble to a poisonous flower, so she stung you!");
     stings++;
-    stingsFunction ();
-        if (stings < 19) {
+    console.log("stings =" + stings);
+     document.querySelector(".stingscount").innerHTML == stings.value;
+    stingsFunction();
+        if (stings > 19) {
             console.log("player has lost the game");
         loseGame();
         }
@@ -318,9 +333,7 @@ if (level === playerOrder.length && good && !win) {
 }
 }
 
-function stingsFunction () {
-    document.getElementById(stingscount) == stings;
-}
+
 
 function loseGame () {
     alert("You got stung too many times! You need to go to hospital! To play again press start.");
@@ -339,4 +352,8 @@ function winGame () {
     stings = 0;
     stingsFunction();
     on = false;
+}
+
+function stingsFunction () {
+    document.querySelector(".stingscount").innerHTML == stings;
 }
