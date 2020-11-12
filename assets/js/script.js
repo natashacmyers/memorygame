@@ -266,6 +266,10 @@ function check () {
     
 if (playerOrder[flash-1] != order[flash-1]) {
     console.log("the player has chosen an incorrect flower");
+    console.log(playerOrder[flash-1]);
+    console.log(order[flash-1]);
+    console.log(playerOrder);
+    console.log(order);
     good = false;
 }
 console.log(good);

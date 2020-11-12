@@ -5,7 +5,7 @@
 
 body {
   background: grey;  
-  height: 100vh;
+  
 }
 
 
@@ -15,6 +15,17 @@ body {
     background-color: darkgrey;
     min-height: 50px;
     
+}
+
+.menuitem h5{
+    color: darkgrey !important;
+}
+.menuitem:hover {
+    text-decoration: none;
+}
+
+.menuitem h5:hover {
+    color: fuchsia !important;
 }
 
 /* -------------------------- Index Section ----------------------------------- */
@@ -105,5 +116,7 @@ from {filter: invert(0%); }
 }
 /* -------------------------- Contact Section ----------------------------------- */
 
-
+form {
+    padding-bottom: 30px;
+}
 
