@@ -5,6 +5,7 @@
 
 body {
   background: grey;  
+  width: 100%;
   
 }
 
@@ -92,11 +93,11 @@ from {filter: invert(0%); }
 
 
 
-.stings, .level , .stingscount, .levelcount{
+.stings, .level , #stingscount, .levelcount{
  font-size: 40px;
 }
 
-.stingscount, .levelcount {
+#stingscount, .levelcount {
     color: darkred;
 }
 
