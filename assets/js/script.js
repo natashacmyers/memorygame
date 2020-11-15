@@ -19,6 +19,9 @@ const greenFlower = document.querySelector(".green-flower");
 const pinkFlower = document.querySelector(".pink-flower");
 const purpleFlower = document.querySelector(".purple-flower");
 const redFlower = document.querySelector(".red-flower");
+const blackFlower = document.querySelector(".black-flower");
+const tropicalFlower = document.querySelector(".tropical-flower");
+const whiteFlower = document.querySelector(".white-flower");
 
 /* ----------------- Start Button ------------------ */
 
@@ -60,6 +63,9 @@ function clearInvertColour() {
       purpleFlower.classList.remove("flash");
       redFlower.classList.remove("flash");
       yellowFlower.classList.remove("flash");
+      blackFlower.classList.remove("flash");
+      tropicalFlower.classList.remove("flash");
+      whiteFlower.classList.remove("flash");
 }
 
 /* ---------------------- Computer's Play --------------- */
@@ -76,12 +82,12 @@ level = 1;
 levelCounter.innerHTML = 1;
 stings = 0;
 for (var i = 0; i < 20; i++){
-   order.push(Math.floor(Math.random() * 6) + 1);
+   order.push(Math.floor(Math.random() * 9) + 1);
    
 }
 
 
-intervalId = setInterval (gameTurn, 800);
+intervalId = setInterval (gameTurn, 1000);
 }
 
 /* Game turn function, firstly checks if the computer is still playing, if the computer is still playing
@@ -117,6 +123,15 @@ function gameTurn () {
         }
         if (order[flash] === 6) {
             six();
+        }
+         if (order[flash] === 7) {
+            seven();
+        }
+         if (order[flash] === 8) {
+            eight();
+        }
+         if (order[flash] === 9) {
+            nine();
         }
         flash++;
         
@@ -177,6 +192,32 @@ function six () {
  
 }
 
+function seven () {
+    blackFlower.classList.add("flash");
+   setTimeout(() => {
+        clearInvertColour();
+    }, 200);
+  
+ 
+}
+
+function eight () {
+    tropicalFlower.classList.add("flash");
+   setTimeout(() => {
+        clearInvertColour();
+    }, 200);
+  
+ 
+}
+
+function nine () {
+    whiteFlower.classList.add("flash");
+   setTimeout(() => {
+        clearInvertColour();
+    }, 200);
+  
+ 
+}
 
 /* ---------------------- User's Play --------------- */
 
@@ -270,13 +311,60 @@ function yellowFlowerPressed () {
     }
 }
 
+function blackFlowerPressed () {
+    if (on) {
+        playerOrder.push(7);
+         if (playerOrder.length == level) {
+            check();
+        }
+        seven();
+        if (!win){
+            setTimeout(() => {
+                clearInvertColour;
+            }, 300)
+        }
+    }
+}
+
+function tropicalFlowerPressed () {
+    if (on) {
+        playerOrder.push(8);
+         if (playerOrder.length == level) {
+            check();
+        }
+        eight();
+        if (!win){
+            setTimeout(() => {
+                clearInvertColour;
+            }, 300)
+        }
+    }
+}
+
+function whiteFlowerPressed () {
+    if (on) {
+        playerOrder.push(9);
+         if (playerOrder.length == level) {
+            check();
+        }
+        nine();
+        if (!win){
+            setTimeout(() => {
+                clearInvertColour;
+            }, 300)
+        }
+    }
+}
+
 pinkFlower.addEventListener('click', pinkFlowerPressed);
 blueFlower.addEventListener('click', blueFlowerPressed);
 greenFlower.addEventListener('click', greenFlowerPressed);
 purpleFlower.addEventListener('click', purpleFlowerPressed);
 redFlower.addEventListener('click', redFlowerPressed);
 yellowFlower.addEventListener('click', yellowFlowerPressed);
-
+blackFlower.addEventListener('click', blackFlowerPressed);
+tropicalFlower.addEventListener('click', tropicalFlowerPressed);
+whiteFlower.addEventListener('click', whiteFlowerPressed);
 
 /* ---------------------- Checking the User's Choice --------------- */
 function checkArrays () {
@@ -298,11 +386,6 @@ if (checkArray.length != level) {
     good = false;
 } 
 
-// if (playerOrder[flash-1] != order[flash-1]) {
-//     console.log("the player has chosen an incorrect flower");
-   
-//     good = false;
-// }
 
 if (playerOrder.length == 20 && good) {
     console.log("player won the game");
@@ -316,7 +399,7 @@ if (good === false) {
     stings++;
     console.log("stings = " + stings);
     stingsFunction();
-        if (stings > 19) {
+        if (stings > 9) {
             console.log("player has lost the game");
         loseGame();
         }
@@ -324,12 +407,12 @@ if (good === false) {
         else {
             console.log("player has been stung but has not lost yet");
         setTimeout (() => {
-        level++;
+        
         flash = 0;
         compTurn = true;
         playerOrder = [];
         good = true;
-        intervalId = setInterval(gameTurn, 800);
+        intervalId = setInterval(gameTurn, 1000);
         } ,800)
 }
 
@@ -343,9 +426,10 @@ if (level === playerOrder.length && good && !win) {
     compTurn = true;
     flash = 0;
     levelCounter.innerHTML = level;
-    intervalId = setInterval(gameTurn, 800);
+    intervalId = setInterval(gameTurn, 1000);
     
 }
+checkArray = [];
 }
 
 

@@ -76,13 +76,13 @@ padding: 20px;
     padding-top: 30px;
 }
 
-.flowerrow2 {
+.flowerrow3 {
     padding-bottom: 30px;
 }
 
 .flash {
 animation-name: invertColour;
-animation-duration: 0.1s;
+animation-duration: 0.5s;
 }
 
 
