@@ -399,7 +399,7 @@ if (good === false) {
     stings++;
     console.log("stings = " + stings);
     stingsFunction();
-        if (stings > 9) {
+        if (stings > 2) {
             console.log("player has lost the game");
         loseGame();
         }
@@ -436,8 +436,8 @@ checkArray = [];
 
 function loseGame () {
     alert("You got stung too many times! You need to go to hospital! To play again press start.");
-    if (levelCounter > document.getElementById("topscorecount").innerHTML){
-        document.getElementById("topscorecount").innerHTML = levelCounter;
+    if (level > document.getElementById("topscorecount").innerHTML){
+        document.getElementById("topscorecount").innerHTML = level;
         } 
     clearInterval(intervalId);
     levelCounter.innerHTML = 0;

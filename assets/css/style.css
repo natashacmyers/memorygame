@@ -50,6 +50,10 @@ body  {
     font-size: 7vw;
 }
 
+.numbercolour {
+    color: blue;
+}
+
 #startbutton {
     margin-top: 4vw;
     background-color: white;
@@ -71,13 +75,7 @@ width: 23vw;
 padding: 1vw;
 }
 
-.flowerrow1 {
-    padding-top: 3vw;
-}
 
-.flowerrow3 {
-    padding-bottom: 3vw;
-}
 
 .flash {
 animation-name: invertColour;
@@ -90,14 +88,15 @@ from {filter: invert(0%); }
   to {filter: invert(100%);}
 }    
 
-
-.stings, .level {
-    padding-top: 7vw;
+.score {
+    margin-top: 2vw;
+    
 }
-
 
 .stings, .level , #stingscount, .levelcount{
  font-size: 7vw;
+ display: inline;
+ padding: 0 2vw;
 }
 
 #stingscount, .levelcount {
@@ -110,12 +109,13 @@ from {filter: invert(0%); }
     
 }
 
-.topscore, .topscorecount {
-    display: inline-block;
-    font-size: 7vw;
+.topscore, #topscorecount {
+    display: inline;
+    font-size: 5vw;
+    padding: 0 2vw;
 }
 
-.topscorecount {
+#topscorecount {
    
     color: darkblue;
 }
