@@ -15,7 +15,6 @@ body {
 .headerbackground {
     background-color: darkgrey;
     
-    
 }
 
 .menuitem h5{
@@ -39,26 +38,26 @@ body  {
 
 .intro h1 , .intro h6{
     
-    padding: 10px 10vw 10px 10vw;
+    padding: 1vw 5vw;
 }
 
 .intro h1 {
-    font-size: 10vw;
+    font-size: 12vw;
     color: lightgray;
 }
 
 .intro h6 {
-    font-size: 5vw;
+    font-size: 7vw;
 }
 
 #startbutton {
-    padding-top: 10px;
+    margin-top: 4vw;
     background-color: white;
-    font-size: 5vw;
+    font-size: 7vw;
     font-family: "Itim", sans-serif;
     color: black;
     text-align: center;
-    padding: 10px 150px 10px 150px;
+    padding: 1vw 15vw;
     border-radius: 200px; 
 }
 .startButtonPressed {
@@ -67,17 +66,17 @@ body  {
 
 
 img {
-height: 20vw;
-width: 20vw;
-padding: 10px;
+height: 23vw;
+width: 23vw;
+padding: 1vw;
 }
 
 .flowerrow1 {
-    padding-top: 30px;
+    padding-top: 3vw;
 }
 
 .flowerrow3 {
-    padding-bottom: 30px;
+    padding-bottom: 3vw;
 }
 
 .flash {
@@ -93,12 +92,12 @@ from {filter: invert(0%); }
 
 
 .stings, .level {
-    padding-top: 50px;
+    padding-top: 7vw;
 }
 
 
 .stings, .level , #stingscount, .levelcount{
- font-size: 5vw;
+ font-size: 7vw;
 }
 
 #stingscount, .levelcount {
@@ -106,22 +105,74 @@ from {filter: invert(0%); }
 }
 
 .topscorerow {
-    padding-bottom: 60px;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
     
 }
 
 .topscore, .topscorecount {
     display: inline-block;
-    font-size: 5vw;
+    font-size: 7vw;
 }
 
 .topscorecount {
-    padding-left: 5px;
+   
     color: darkblue;
 }
 /* -------------------------- Contact Section ----------------------------------- */
 
+
 form {
-    padding-bottom: 30px;
+    margin-bottom: 5vw;
+    font-size: 4vw;
+    width: 80%;
 }
 
+
+/* -------------------------- Responsive Design ----------------------------------- */
+
+@media screen and (min-width: 1200px) {
+    .intro h1 {
+    font-size: 7vw;
+}
+
+.intro h6 {
+    font-size: 3vw;
+}
+  img {
+      height: 13vw;
+      width: 13vw;
+  }
+  .flowerrow1 {
+    padding-top: 1vw;
+}
+
+.flowerrow3 {
+    padding-bottom: 1vw;
+}
+
+#startbutton {
+    margin-top: 1vw;
+    font-size: 3vw;
+    padding: 1vw 15vw;
+}
+
+.stings, .level , #stingscount, .levelcount{
+ font-size: 3vw;
+}
+
+.topscore, .topscorecount {
+
+    font-size: 3vw;
+}
+
+form {
+    margin-bottom: 5vw;
+    font-size: 2vw;
+    width: 60%;
+}
+
+.btn {
+    font-size: 1.5vw;
+}
+}
