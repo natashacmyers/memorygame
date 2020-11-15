@@ -14,7 +14,7 @@ body {
 
 .headerbackground {
     background-color: darkgrey;
-    min-height: 50px;
+    
     
 }
 
@@ -39,22 +39,22 @@ body  {
 
 .intro h1 , .intro h6{
     
-    padding: 10px 150px 10px 150px;
+    padding: 10px 10vw 10px 10vw;
 }
 
 .intro h1 {
-    font-size: 90px;
+    font-size: 10vw;
     color: lightgray;
 }
 
 .intro h6 {
-    font-size: 30px;
+    font-size: 5vw;
 }
 
 #startbutton {
     padding-top: 10px;
     background-color: white;
-    font-size: 50px;
+    font-size: 5vw;
     font-family: "Itim", sans-serif;
     color: black;
     text-align: center;
@@ -67,9 +67,9 @@ body  {
 
 
 img {
-height: 200px;
-width: 200px;
-padding: 20px;
+height: 20vw;
+width: 20vw;
+padding: 10px;
 }
 
 .flowerrow1 {
@@ -92,9 +92,13 @@ from {filter: invert(0%); }
 }    
 
 
+.stings, .level {
+    padding-top: 50px;
+}
+
 
 .stings, .level , #stingscount, .levelcount{
- font-size: 40px;
+ font-size: 5vw;
 }
 
 #stingscount, .levelcount {
@@ -108,7 +112,7 @@ from {filter: invert(0%); }
 
 .topscore, .topscorecount {
     display: inline-block;
-    font-size: 40px;
+    font-size: 5vw;
 }
 
 .topscorecount {
