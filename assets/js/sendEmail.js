@@ -1,4 +1,5 @@
 function sendMail(contactForm) {
+   
 emailjs.send("gmail", "Beemail", {
     "fname": contactForm.fname.value,
     "lname": contactForm.lname.value,
@@ -15,4 +16,5 @@ emailjs.send("gmail", "Beemail", {
     }
 )
 return false;
+
 }
