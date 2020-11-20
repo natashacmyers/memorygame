@@ -86,7 +86,7 @@ for (var i = 0; i < 20; i++){
    order.push(Math.floor(Math.random() * 9) + 1);
    
 }
-
+console.log(order);
 
 intervalId = setInterval (gameTurn, 1000);
 }
@@ -99,7 +99,7 @@ function gameTurn () {
      compTurn = false;
      on = true;
      clearInterval(intervalId);
-     console.log("computer is done");
+    
 
      
  }
@@ -376,10 +376,7 @@ whiteFlower.addEventListener('click', whiteFlowerPressed);
 function checkArrays () {
     for (let i = 0; i < playerOrder.length; i++) {
     if (playerOrder[i] === order[i]) {
-        console.log("playerOrder[i] = " + playerOrder[i]);
-        console.log("order[i] = " + order[i]);
         checkArray.push(playerOrder[i]);
-        console.log("checkArray = " + checkArray);
     }
 }
 }
@@ -388,13 +385,11 @@ function checkArrays () {
 function check () {
     checkArrays ();
 if (checkArray.length != level) {
-    console.log("the player has chosen an incorrect flower");
     good = false;
 } 
 
 
-if (playerOrder.length == 20 && good) {
-    console.log("player won the game");
+if (level > 19 && good) {
     winGame();
 }
 
@@ -406,12 +401,10 @@ if (good === false) {
     console.log("stings = " + stings);
     stingsFunction();
         if (stings > 2) {
-            console.log("player has lost the game");
         loseGame();
         }
 
         else {
-            console.log("player has been stung but has not lost yet");
         setTimeout (() => {
         
         flash = 0;
@@ -426,7 +419,6 @@ if (good === false) {
 
 
 if (level === playerOrder.length && good && !win) {
-    console.log("player has chosen correctly");
     level++;
     playerOrder = [];
     compTurn = true;
@@ -453,16 +445,18 @@ function loseGame () {
     
 }
 
+
 function winGame () {
     alert("Well done! Bumble has enough honey for winter now! You WIN :) ");
-    if (levelCounter > document.getElementById("topscorecount").innerHTML){
-        document.getElementById("topscorecount").innerHTML = levelCounter;
-        } 
     clearInterval(intervalId);
-    levelCounter.innerHTML = 0;
     stings = 0;
     stingsFunction();
     on = false;
+    if (level > document.getElementById("topscorecount").innerHTML){
+        document.getElementById("topscorecount").innerHTML = level;
+        } 
+    level = 0;
+    levelCounter.innerHTML = 0;
 }
 
 function stingsFunction () {
