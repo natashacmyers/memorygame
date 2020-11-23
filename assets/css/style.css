@@ -76,6 +76,7 @@ padding: 1vw;
 }
 
 
+/* This is the class that will make the flowers invert colour  */
 
 .flash {
 animation-name: invertColour;
