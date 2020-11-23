@@ -4,9 +4,9 @@
 
 
 body {
-  background: grey;  
-  width: 100%;
-  
+    background: grey;
+    width: 100%;
+
 }
 
 
@@ -14,12 +14,13 @@ body {
 
 .headerbackground {
     background-color: darkgrey;
-    
+
 }
 
-.menuitem h5{
+.menuitem h5 {
     color: darkgrey !important;
 }
+
 .menuitem:hover {
     text-decoration: none;
 }
@@ -29,15 +30,16 @@ body {
 }
 
 /* -------------------------- Index Section ----------------------------------- */
-body  {
+body {
     font-family: "Itim", sans-serif;
     color: white;
     text-align: center;
 
 }
 
-.intro h1 , .intro h6{
-    
+.intro h1,
+.intro h6 {
+
     padding: 1vw 5vw;
 }
 
@@ -62,64 +64,76 @@ body  {
     color: black;
     text-align: center;
     padding: 1vw 15vw;
-    border-radius: 200px; 
+    border-radius: 200px;
 }
+
 .startButtonPressed {
     background-color: red !important;
 }
 
 
 img {
-height: 23vw;
-width: 23vw;
-padding: 1vw;
+    height: 23vw;
+    width: 23vw;
+    padding: 1vw;
 }
 
 
 /* This is the class that will make the flowers invert colour  */
 
 .flash {
-animation-name: invertColour;
-animation-duration: 0.5s;
+    animation-name: invertColour;
+    animation-duration: 0.5s;
 }
 
 
 @keyframes invertColour {
-from {filter: invert(0%); }
-  to {filter: invert(100%);}
-}    
+    from {
+        filter: invert(0%);
+    }
+
+    to {
+        filter: invert(100%);
+    }
+}
 
 .score {
     margin-top: 2vw;
-    
+
 }
 
-.stings, .level , #stingscount, .levelcount{
- font-size: 7vw;
- display: inline;
- padding: 0 2vw;
+.stings,
+.level,
+#stingscount,
+.levelcount {
+    font-size: 7vw;
+    display: inline;
+    padding: 0 2vw;
 }
 
-#stingscount, .levelcount {
+#stingscount,
+.levelcount {
     color: darkred;
 }
 
 .topscorerow {
     margin-top: 3vw;
     margin-bottom: 3vw;
-    
+
 }
 
-.topscore, #topscorecount {
+.topscore,
+#topscorecount {
     display: inline;
     font-size: 5vw;
     padding: 0 2vw;
 }
 
 #topscorecount {
-   
+
     color: darkblue;
 }
+
 /* -------------------------- Contact Section ----------------------------------- */
 
 
@@ -134,46 +148,52 @@ form {
 
 @media screen and (min-width: 1200px) {
     .intro h1 {
-    font-size: 7vw;
-}
+        font-size: 7vw;
+    }
 
-.intro h6 {
-    font-size: 3vw;
-}
-  img {
-      height: 13vw;
-      width: 13vw;
-  }
-  .flowerrow1 {
-    padding-top: 1vw;
-}
+    .intro h6 {
+        font-size: 3vw;
+    }
 
-.flowerrow3 {
-    padding-bottom: 1vw;
-}
+    img {
+        height: 13vw;
+        width: 13vw;
+    }
 
-#startbutton {
-    margin-top: 1vw;
-    font-size: 3vw;
-    padding: 1vw 15vw;
-}
+    .flowerrow1 {
+        padding-top: 1vw;
+    }
 
-.stings, .level , #stingscount, .levelcount{
- font-size: 3vw;
-}
+    .flowerrow3 {
+        padding-bottom: 1vw;
+    }
 
-.topscore, .topscorecount {
+    #startbutton {
+        margin-top: 1vw;
+        font-size: 3vw;
+        padding: 1vw 15vw;
+    }
 
-    font-size: 3vw;
-}
+    .stings,
+    .level,
+    #stingscount,
+    .levelcount {
+        font-size: 3vw;
+    }
 
-form {
-    margin-bottom: 5vw;
-    font-size: 2vw;
-    width: 60%;
-}
+    .topscore,
+    .topscorecount {
 
-.btn {
-    font-size: 1.5vw;
-}
+        font-size: 3vw;
+    }
+
+    form {
+        margin-bottom: 5vw;
+        font-size: 2vw;
+        width: 60%;
+    }
+
+    .btn {
+        font-size: 1.5vw;
+    }
 }

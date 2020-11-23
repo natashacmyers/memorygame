@@ -33,8 +33,8 @@ const start = document.querySelector('#startbutton');
 // words to 'stop' instead of 'start'.
 // When the class is present, the game will be stopped and reset, and when the class is absent, the game will start.
 
-function startButtonOn () {
-    if (this.classList.contains("startButtonPressed")){
+function startButtonOn() {
+    if (this.classList.contains("startButtonPressed")) {
         this.classList.remove("startButtonPressed");
         document.getElementById("startbutton").innerHTML = "Start";
         levelCounter.innerHTML = 0;
@@ -42,100 +42,99 @@ function startButtonOn () {
         stings = 0;
         stingsFunction();
 
-        
-    }
-    else {
+
+    } else {
         this.classList.add("startButtonPressed");
-         document.getElementById("startbutton").innerHTML = "Stop";
-         compTurn = true;
+        document.getElementById("startbutton").innerHTML = "Stop";
+        compTurn = true;
         play();
     }
 }
 
 start.addEventListener('click', startButtonOn);
-     
+
 /* ---------------------- Repeatedly called functions  --------------- */
 
 // this function is used to clear the inverted colours of the flowers after they have been flashed 
 
 function clearInvertColour() {
-      pinkFlower.classList.remove("flash");
-      blueFlower.classList.remove("flash");
-      greenFlower.classList.remove("flash");
-      purpleFlower.classList.remove("flash");
-      redFlower.classList.remove("flash");
-      yellowFlower.classList.remove("flash");
-      blackFlower.classList.remove("flash");
-      tropicalFlower.classList.remove("flash");
-      whiteFlower.classList.remove("flash");
+    pinkFlower.classList.remove("flash");
+    blueFlower.classList.remove("flash");
+    greenFlower.classList.remove("flash");
+    purpleFlower.classList.remove("flash");
+    redFlower.classList.remove("flash");
+    yellowFlower.classList.remove("flash");
+    blackFlower.classList.remove("flash");
+    tropicalFlower.classList.remove("flash");
+    whiteFlower.classList.remove("flash");
 }
 
 // This function is used to show what should happen to each flower if it is called upon to 'flash' either by the 
 // computer or by the user. In each case, the 'flash' class is added to the element for 0.5s and then removed. 
 
-function flashFlower (colour) {
+function flashFlower(colour) {
 
-switch (colour) {
-    case "pink":
-        pinkFlower.classList.add("flash");
-        setTimeout(() => {
-        clearInvertColour();
-        }, 200);
-        break;
-    case "blue":
-        blueFlower.classList.add("flash");
-        setTimeout(() => {
-        clearInvertColour();
-        }, 200);
-        break;
-    case "green":
-        greenFlower.classList.add("flash");
-        setTimeout(() => {
-        clearInvertColour();
-        }, 200);    
-        break;
-    case "purple":
-        purpleFlower.classList.add("flash");
-        setTimeout(() => {
-        clearInvertColour();
-        }, 200);    
-        break;
-    case "red":
-        redFlower.classList.add("flash");
-        setTimeout(() => {
-        clearInvertColour();
-        }, 200); 
-        break;
-    case "yellow":
-        yellowFlower.classList.add("flash");
-        setTimeout(() => {
-        clearInvertColour();
-        }, 200); 
-        break;      
-    case "black":
-        blackFlower.classList.add("flash");
-        setTimeout(() => {
-        clearInvertColour();
-        }, 200);  
-        break;    
-    case "tropical":
-        tropicalFlower.classList.add("flash");
-        setTimeout(() => {
-        clearInvertColour();
-        }, 200); 
-        break;   
-    case "white":
-        whiteFlower.classList.add("flash");
-        setTimeout(() => {
-        clearInvertColour();
-        }, 200); 
-        break;       
-}
+    switch (colour) {
+        case "pink":
+            pinkFlower.classList.add("flash");
+            setTimeout(() => {
+                clearInvertColour();
+            }, 200);
+            break;
+        case "blue":
+            blueFlower.classList.add("flash");
+            setTimeout(() => {
+                clearInvertColour();
+            }, 200);
+            break;
+        case "green":
+            greenFlower.classList.add("flash");
+            setTimeout(() => {
+                clearInvertColour();
+            }, 200);
+            break;
+        case "purple":
+            purpleFlower.classList.add("flash");
+            setTimeout(() => {
+                clearInvertColour();
+            }, 200);
+            break;
+        case "red":
+            redFlower.classList.add("flash");
+            setTimeout(() => {
+                clearInvertColour();
+            }, 200);
+            break;
+        case "yellow":
+            yellowFlower.classList.add("flash");
+            setTimeout(() => {
+                clearInvertColour();
+            }, 200);
+            break;
+        case "black":
+            blackFlower.classList.add("flash");
+            setTimeout(() => {
+                clearInvertColour();
+            }, 200);
+            break;
+        case "tropical":
+            tropicalFlower.classList.add("flash");
+            setTimeout(() => {
+                clearInvertColour();
+            }, 200);
+            break;
+        case "white":
+            whiteFlower.classList.add("flash");
+            setTimeout(() => {
+                clearInvertColour();
+            }, 200);
+            break;
+    }
 }
 
 // The stings function will change the innerHTML of the Stings element to equal whatever the stings variable is
 
-function stingsFunction () {
+function stingsFunction() {
     document.getElementById("stingscount").innerHTML = stings;
 }
 
@@ -154,20 +153,20 @@ function stingsFunction () {
 // into the 'order' array. These are the answers to the game that the computer will flash
 // Then finally, the play function will call the gameTurn() function to play every second using setInterval
 
-function play () {
-win = false;
-good = true;
-order = [];
-playerOrder = [];
-flash = 0;
-level = 1;
-levelCounter.innerHTML = 1;
-stings = 0;
-for (var i = 0; i < 20; i++){
-   order.push(Math.floor(Math.random() * 9) + 1);
-   
-}
-intervalId = setInterval (gameTurn, 1000);
+function play() {
+    win = false;
+    good = true;
+    order = [];
+    playerOrder = [];
+    flash = 0;
+    level = 1;
+    levelCounter.innerHTML = 1;
+    stings = 0;
+    for (var i = 0; i < 20; i++) {
+        order.push(Math.floor(Math.random() * 9) + 1);
+
+    }
+    intervalId = setInterval(gameTurn, 1000);
 }
 
 
@@ -183,61 +182,61 @@ intervalId = setInterval (gameTurn, 1000);
 
 // Each round flash will be incremented by 1.
 
-function gameTurn () {
+function gameTurn() {
     on = false;
- if (flash == level) {
-     compTurn = false;
-     on = true;
-     clearInterval(intervalId);
- }
- if (compTurn) {
-   
-     clearInvertColour();
-     setTimeout(() => {
-        switch (order[flash]) {
-        case 1 :
-            colour = "pink";
-            flashFlower(colour);
-            break;
-        case 2:
-            colour = "blue";
-            flashFlower(colour);
-            break;
-        
-        case 3:
-            colour = "green";
-            flashFlower(colour);
-            break;
-        case 4:
-            colour = "purple";
-            flashFlower(colour);
-            break;
-        case 5:
-            colour = "red";
-            flashFlower(colour);
-            break;
-        case 6:
-            colour = "yellow";
-            flashFlower(colour);
-            break;
-         case 7:
-             colour = "black";
-            flashFlower(colour);
-            break;
-         case 8:
-             colour = "tropical";
-            flashFlower(colour);
-            break;
-         case 9:
-             colour = "white";
-            flashFlower(colour);
-            break;
-        }
-        flash++;
-        
-     }, 200);  
-    
- }
+    if (flash == level) {
+        compTurn = false;
+        on = true;
+        clearInterval(intervalId);
+    }
+    if (compTurn) {
+
+        clearInvertColour();
+        setTimeout(() => {
+            switch (order[flash]) {
+                case 1:
+                    colour = "pink";
+                    flashFlower(colour);
+                    break;
+                case 2:
+                    colour = "blue";
+                    flashFlower(colour);
+                    break;
+
+                case 3:
+                    colour = "green";
+                    flashFlower(colour);
+                    break;
+                case 4:
+                    colour = "purple";
+                    flashFlower(colour);
+                    break;
+                case 5:
+                    colour = "red";
+                    flashFlower(colour);
+                    break;
+                case 6:
+                    colour = "yellow";
+                    flashFlower(colour);
+                    break;
+                case 7:
+                    colour = "black";
+                    flashFlower(colour);
+                    break;
+                case 8:
+                    colour = "tropical";
+                    flashFlower(colour);
+                    break;
+                case 9:
+                    colour = "white";
+                    flashFlower(colour);
+                    break;
+            }
+            flash++;
+
+        }, 200);
+
+    }
 }
 
 
@@ -249,7 +248,7 @@ function gameTurn () {
 // element in the same way as when the computer plays. The users choices are added to an array called 
 //'playerOrder', and the check() function is used to check if the user was correct.  
 
-function pinkFlowerPressed () {
+function pinkFlowerPressed() {
     if (on) {
         playerOrder.push(1);
         if (playerOrder.length == level) {
@@ -257,7 +256,7 @@ function pinkFlowerPressed () {
         }
         colour = "pink";
         flashFlower(colour);
-        if (!win){
+        if (!win) {
             setTimeout(() => {
                 clearInvertColour;
             }, 300)
@@ -265,75 +264,79 @@ function pinkFlowerPressed () {
     }
 }
 
-function blueFlowerPressed () {
+function blueFlowerPressed() {
     if (on) {
         playerOrder.push(2);
-       if (playerOrder.length == level) {
+        if (playerOrder.length == level) {
             check();
         }
         colour = "blue";
         flashFlower(colour);
-        if (!win){
+        if (!win) {
             setTimeout(() => {
                 clearInvertColour;
             }, 300)
         }
     }
 }
-function greenFlowerPressed () {
+
+function greenFlowerPressed() {
     if (on) {
         playerOrder.push(3);
-         if (playerOrder.length == level) {
+        if (playerOrder.length == level) {
             check();
         }
         colour = "green";
         flashFlower(colour);
-        if (!win){
+        if (!win) {
             setTimeout(() => {
                 clearInvertColour;
             }, 300)
         }
     }
 }
-function purpleFlowerPressed () {
+
+function purpleFlowerPressed() {
     if (on) {
         playerOrder.push(4);
-         if (playerOrder.length == level) {
+        if (playerOrder.length == level) {
             check();
         }
         colour = "purple";
         flashFlower(colour);
-        if (!win){
+        if (!win) {
             setTimeout(() => {
                 clearInvertColour;
             }, 300)
         }
     }
 }
-function redFlowerPressed () {
+
+function redFlowerPressed() {
     if (on) {
         playerOrder.push(5);
-         if (playerOrder.length == level) {
+        if (playerOrder.length == level) {
             check();
         }
         colour = "red";
         flashFlower(colour);
-        if (!win){
+        if (!win) {
             setTimeout(() => {
                 clearInvertColour;
             }, 300)
         }
     }
 }
-function yellowFlowerPressed () {
+
+function yellowFlowerPressed() {
     if (on) {
         playerOrder.push(6);
-         if (playerOrder.length == level) {
+        if (playerOrder.length == level) {
             check();
         }
         colour = "yellow";
         flashFlower(colour);
-        if (!win){
+        if (!win) {
             setTimeout(() => {
                 clearInvertColour;
             }, 300)
@@ -341,15 +344,15 @@ function yellowFlowerPressed () {
     }
 }
 
-function blackFlowerPressed () {
+function blackFlowerPressed() {
     if (on) {
         playerOrder.push(7);
-         if (playerOrder.length == level) {
+        if (playerOrder.length == level) {
             check();
         }
         colour = "black";
         flashFlower(colour);
-        if (!win){
+        if (!win) {
             setTimeout(() => {
                 clearInvertColour;
             }, 300)
@@ -357,15 +360,15 @@ function blackFlowerPressed () {
     }
 }
 
-function tropicalFlowerPressed () {
+function tropicalFlowerPressed() {
     if (on) {
         playerOrder.push(8);
-         if (playerOrder.length == level) {
+        if (playerOrder.length == level) {
             check();
         }
         colour = "tropical";
         flashFlower(colour);
-        if (!win){
+        if (!win) {
             setTimeout(() => {
                 clearInvertColour;
             }, 300)
@@ -373,15 +376,15 @@ function tropicalFlowerPressed () {
     }
 }
 
-function whiteFlowerPressed () {
+function whiteFlowerPressed() {
     if (on) {
         playerOrder.push(9);
-         if (playerOrder.length == level) {
+        if (playerOrder.length == level) {
             check();
         }
         colour = "white";
         flashFlower(colour);
-        if (!win){
+        if (!win) {
             setTimeout(() => {
                 clearInvertColour;
             }, 300)
@@ -404,68 +407,68 @@ whiteFlower.addEventListener('click', whiteFlowerPressed);
 
 // This function just checks the playerOrder array against the order array. If they are the same then they are added to
 // a checkArray array. 
-function checkArrays () {
+function checkArrays() {
     for (let i = 0; i < playerOrder.length; i++) {
-    if (playerOrder[i] === order[i]) {
-        checkArray.push(playerOrder[i]);
+        if (playerOrder[i] === order[i]) {
+            checkArray.push(playerOrder[i]);
+        }
     }
-}
 }
 
 // The check function does the following:
 // It calls the checkArrays() function which creates the checkArray array. If the player has answered correctly the 
 // length of this array should be equal to the level the player is on. If not then the good will change to false.
-function check () {
-    checkArrays ();
-if (checkArray.length != level) {
-    good = false;
-} 
+function check() {
+    checkArrays();
+    if (checkArray.length != level) {
+        good = false;
+    }
 
-// If the player has successfully passed level 20 then the winGame() function will be called 
+    // If the player has successfully passed level 20 then the winGame() function will be called 
 
-if (level > 19 && good) {
-    winGame();
-}
+    if (level > 19 && good) {
+        winGame();
+    }
 
-// If the user has answered incorrectly then good will be changed to false. If good is false then the player is informed
-// they have answered incorrectly, and a sting is added to their tally. 
- 
-if (good === false) {
-    alert("Ouch! You took Bumble to a poisonous flower, so she stung you!");
-    stings++;
-    stingsFunction();
-    
-    // If the total number of stings is 3 then the loseGame() function is called.
+    // If the user has answered incorrectly then good will be changed to false. If good is false then the player is informed
+    // they have answered incorrectly, and a sting is added to their tally. 
+
+    if (good === false) {
+        alert("Ouch! You took Bumble to a poisonous flower, so she stung you!");
+        stings++;
+        stingsFunction();
+
+        // If the total number of stings is 3 then the loseGame() function is called.
         if (stings > 2) {
-        loseGame();
+            loseGame();
         }
-    // If the user does get a sting, this else function will restart the intervalId and continue the game play
-    // The level will not increment as the user did not successfully pass the level
+        // If the user does get a sting, this else function will restart the intervalId and continue the game play
+        // The level will not increment as the user did not successfully pass the level
         else {
-        setTimeout (() => {
-        
-        flash = 0;
-        compTurn = true;
-        playerOrder = [];
-        good = true;
-        intervalId = setInterval(gameTurn, 1000);
-        } ,800)
+            setTimeout(() => {
+
+                flash = 0;
+                compTurn = true;
+                playerOrder = [];
+                good = true;
+                intervalId = setInterval(gameTurn, 1000);
+            }, 800)
         }
 
-}
+    }
 
-// If the user has successfully passed the level, then level will increment, and the intervalId will play again
+    // If the user has successfully passed the level, then level will increment, and the intervalId will play again
 
-if (level === playerOrder.length && good && !win) {
-    level++;
-    playerOrder = [];
-    compTurn = true;
-    flash = 0;
-    levelCounter.innerHTML = level;
-    intervalId = setInterval(gameTurn, 1000);
-    
-}
-checkArray = [];
+    if (level === playerOrder.length && good && !win) {
+        level++;
+        playerOrder = [];
+        compTurn = true;
+        flash = 0;
+        levelCounter.innerHTML = level;
+        intervalId = setInterval(gameTurn, 1000);
+
+    }
+    checkArray = [];
 }
 
 
@@ -475,33 +478,32 @@ checkArray = [];
 // The game does not autorestart, the user will need to press Start to begin again.
 // The topscore element will be updated if the current topscore is less than the one from the game just played.
 
-function loseGame () {
+function loseGame() {
     alert("You got stung too many times! You need to go to hospital! To play again press start.");
-    if (level > document.getElementById("topscorecount").innerHTML){
+    if (level > document.getElementById("topscorecount").innerHTML) {
         document.getElementById("topscorecount").innerHTML = level;
-        } 
+    }
     clearInterval(intervalId);
     levelCounter.innerHTML = 0;
     stings = 0;
     stingsFunction();
     on = false;
-    
+
 }
 
 // The winGame() function will alert the user that they have won the game and reset the game.
 // The game does not autorestart, the user will need to press Start to begin again.
 // The topscore element will be updated if the current topscore is less than the one from the game just played.
 
-function winGame () {
+function winGame() {
     alert("Well done! Bumble has enough honey for winter now! You WIN :) ");
     clearInterval(intervalId);
     stings = 0;
     stingsFunction();
     on = false;
-    if (level > document.getElementById("topscorecount").innerHTML){
+    if (level > document.getElementById("topscorecount").innerHTML) {
         document.getElementById("topscorecount").innerHTML = level;
-        } 
+    }
     level = 0;
     levelCounter.innerHTML = 0;
 }
-
