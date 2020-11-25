@@ -29,6 +29,12 @@ body {
     color: fuchsia !important;
 }
 
+.pos-f-t {
+    width: 100%;
+}
+
+
+
 /* -------------------------- Index Section ----------------------------------- */
 body {
     font-family: "Itim", sans-serif;
@@ -65,6 +71,10 @@ body {
     text-align: center;
     padding: 1vw 15vw;
     border-radius: 200px;
+}
+
+#startbutton:hover {
+    cursor: pointer;
 }
 
 .startButtonPressed {

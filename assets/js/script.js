@@ -53,6 +53,12 @@ function startButtonOn() {
 
 start.addEventListener('click', startButtonOn);
 
+$("#startbutton").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#scrollTop").offset().top
+    }, 1000);
+});
+
 /* ---------------------- Repeatedly called functions  --------------- */
 
 // this function is used to clear the inverted colours of the flowers after they have been flashed 

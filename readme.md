@@ -30,6 +30,7 @@ making it easy to navigate for all users.
 - ### Design
   - #### Colour Scheme
     - The main colour scheme is the gray scale which creates an eye-catching contrast against the colourful flowers.
+    - This site is aimed at children, so the colourful scheme is to keep the attention of the younger generation.
   - #### Typography
     - The Itim font is the main font used throughout the whole website with Sans Serif as the fallback font in case
       for any reason the font isn't being imported into the site correctly. Itim is a clean and informal font, which
@@ -37,6 +38,11 @@ making it easy to navigate for all users.
   - #### Imagery
     - The images used on this site are the flowers, which are very colourful and eyecatching. The dramatic colour spectrum
       between the flower images is designed to create a child-like happiness for the user to enjoy the simplicity of the game.
+  - #### Hamburger Menu
+    - Although usually hamburger menu is traditionally used on mobile devices, there are only two pages on this site and so
+      a full menu looked out of place. Additionally, this site is intended for children so a continuous look on all devices 
+      will help with understanding.
+
 
 * ### Wireframes
 
