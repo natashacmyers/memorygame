@@ -256,12 +256,12 @@ function gameTurn() {
 
 function pinkFlowerPressed() {
     if (on) {
+        colour = "pink";
+        flashFlower(colour);
         playerOrder.push(1);
         if (playerOrder.length == level) {
             check();
         }
-        colour = "pink";
-        flashFlower(colour);
         if (!win) {
             setTimeout(() => {
                 clearInvertColour;
@@ -272,12 +272,12 @@ function pinkFlowerPressed() {
 
 function blueFlowerPressed() {
     if (on) {
+        colour = "blue";
+        flashFlower(colour);
         playerOrder.push(2);
         if (playerOrder.length == level) {
             check();
         }
-        colour = "blue";
-        flashFlower(colour);
         if (!win) {
             setTimeout(() => {
                 clearInvertColour;
@@ -288,12 +288,12 @@ function blueFlowerPressed() {
 
 function greenFlowerPressed() {
     if (on) {
+        colour = "green";
+        flashFlower(colour);
         playerOrder.push(3);
         if (playerOrder.length == level) {
             check();
         }
-        colour = "green";
-        flashFlower(colour);
         if (!win) {
             setTimeout(() => {
                 clearInvertColour;
@@ -304,12 +304,12 @@ function greenFlowerPressed() {
 
 function purpleFlowerPressed() {
     if (on) {
+        colour = "purple";
+        flashFlower(colour);
         playerOrder.push(4);
         if (playerOrder.length == level) {
             check();
         }
-        colour = "purple";
-        flashFlower(colour);
         if (!win) {
             setTimeout(() => {
                 clearInvertColour;
@@ -320,12 +320,12 @@ function purpleFlowerPressed() {
 
 function redFlowerPressed() {
     if (on) {
+        colour = "red";
+        flashFlower(colour);
         playerOrder.push(5);
         if (playerOrder.length == level) {
             check();
         }
-        colour = "red";
-        flashFlower(colour);
         if (!win) {
             setTimeout(() => {
                 clearInvertColour;
@@ -336,12 +336,12 @@ function redFlowerPressed() {
 
 function yellowFlowerPressed() {
     if (on) {
+        colour = "yellow";
+        flashFlower(colour);
         playerOrder.push(6);
         if (playerOrder.length == level) {
             check();
         }
-        colour = "yellow";
-        flashFlower(colour);
         if (!win) {
             setTimeout(() => {
                 clearInvertColour;
@@ -352,12 +352,12 @@ function yellowFlowerPressed() {
 
 function blackFlowerPressed() {
     if (on) {
+        colour = "black";
+        flashFlower(colour);
         playerOrder.push(7);
         if (playerOrder.length == level) {
             check();
         }
-        colour = "black";
-        flashFlower(colour);
         if (!win) {
             setTimeout(() => {
                 clearInvertColour;
@@ -368,12 +368,12 @@ function blackFlowerPressed() {
 
 function tropicalFlowerPressed() {
     if (on) {
+        colour = "tropical";
+        flashFlower(colour);
         playerOrder.push(8);
         if (playerOrder.length == level) {
             check();
         }
-        colour = "tropical";
-        flashFlower(colour);
         if (!win) {
             setTimeout(() => {
                 clearInvertColour;
@@ -384,12 +384,12 @@ function tropicalFlowerPressed() {
 
 function whiteFlowerPressed() {
     if (on) {
+        colour = "white";
+        flashFlower(colour);
         playerOrder.push(9);
         if (playerOrder.length == level) {
             check();
         }
-        colour = "white";
-        flashFlower(colour);
         if (!win) {
             setTimeout(() => {
                 clearInvertColour;
