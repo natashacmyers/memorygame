@@ -5,8 +5,6 @@
 This is a website for hosting a memory game. It is designed to be responsive and accessible on a range of devices,
 making it easy to navigate for all users.
 
-[insert picture of website here]
-
 ## User Experience (UX)
 
 - ### User stories
@@ -83,10 +81,8 @@ making it easy to navigate for all users.
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
-- [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
-- [W3C JavaScript Validator](https://codebeautify.org/jsvalidate) - [Results](https://github.com/)
-
+- [W3C Markup Validator](https://validator.w3.org/) - [Results](https://github.com/natashacmyers/memorygame/tree/master/assets/images/screenshots)
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - [Results](https://github.com/natashacmyers/memorygame/tree/master/assets/images/screenshots)
 ### Testing User Stories from User Experience (UX) Section
 
 - #### First Time Visitor Goals
@@ -157,7 +153,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 The project was deployed to GitHub Pages using the following steps...
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/natashacmyers/memorygame)
 2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
    - Alternatively Click [Here](https://raw.githubusercontent.com/) for a GIF demonstrating the process starting from Step 2.
 3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
@@ -209,6 +205,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 - [FreeCodeCamp](https://www.freecodecamp.org/): Free Code Camp tutorials were used to help create the script.js file that runs the memory game itself. A lot of changes were made to the code but the fundamental principles are from Free Code Camp tutorials.
 
+- [FreeSound](https://freesound.org/): Free sound provided all sounds used in the memory game.
 ### Content
 
 - All content was written by the developer.
