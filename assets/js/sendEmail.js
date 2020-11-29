@@ -12,10 +12,12 @@ function sendMail(contactForm) {
         })
         .then(
             function (response) {
-                console.log("SUCCESS", response);
+                document.getElementById("contactForm").reset();
+                alert("Thank you for your message, we will respond to you as soon as we can!")
+                window.location.replace("/");
             },
             function (error) {
-                console.log("FAILED", error);
+                alert("Oops, something went wrong. Please try again.")
             }
         )
     return false;

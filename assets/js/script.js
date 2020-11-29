@@ -26,7 +26,11 @@ const blackFlower = document.querySelector(".black-flower");
 const tropicalFlower = document.querySelector(".tropical-flower");
 const whiteFlower = document.querySelector(".white-flower");
 const start = document.querySelector('#startbutton');
-
+const flowerSound = document.getElementById('flowersound');
+const stingSound = document.getElementById('stingsound');
+const startSound = document.getElementById('startsound');
+const winSound = document.getElementById('winsound');
+const loseSound = document.getElementById('losesound');
 /* ----------------- Start Button ------------------ */
 
 // This function toggles a class to the start button when pressed, which turns the button red and changes the 
@@ -41,23 +45,23 @@ function startButtonOn() {
         clearInterval(intervalId);
         stings = 0;
         stingsFunction();
+        startSound.play();
 
 
     } else {
         this.classList.add("startButtonPressed");
         document.getElementById("startbutton").innerHTML = "Stop";
         compTurn = true;
+        $('html, body').animate({
+        scrollTop: $("#scrollTop").offset().top
+        }, 1000);
         play();
+        startSound.play();
     }
 }
 
 start.addEventListener('click', startButtonOn);
 
-$("#startbutton").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#scrollTop").offset().top
-    }, 1000);
-});
 
 /* ---------------------- Repeatedly called functions  --------------- */
 
@@ -83,54 +87,63 @@ function flashFlower(colour) {
     switch (colour) {
         case "pink":
             pinkFlower.classList.add("flash");
+            flowerSound.play();
             setTimeout(() => {
                 clearInvertColour();
             }, 200);
             break;
         case "blue":
             blueFlower.classList.add("flash");
+            flowerSound.play();
             setTimeout(() => {
                 clearInvertColour();
             }, 200);
             break;
         case "green":
             greenFlower.classList.add("flash");
+            flowerSound.play();
             setTimeout(() => {
                 clearInvertColour();
             }, 200);
             break;
         case "purple":
             purpleFlower.classList.add("flash");
+            flowerSound.play();
             setTimeout(() => {
                 clearInvertColour();
             }, 200);
             break;
         case "red":
             redFlower.classList.add("flash");
+            flowerSound.play();
             setTimeout(() => {
                 clearInvertColour();
             }, 200);
             break;
         case "yellow":
             yellowFlower.classList.add("flash");
+            flowerSound.play();
             setTimeout(() => {
                 clearInvertColour();
             }, 200);
             break;
         case "black":
             blackFlower.classList.add("flash");
+            flowerSound.play();
             setTimeout(() => {
                 clearInvertColour();
             }, 200);
             break;
         case "tropical":
             tropicalFlower.classList.add("flash");
+            flowerSound.play();
             setTimeout(() => {
                 clearInvertColour();
             }, 200);
             break;
         case "white":
             whiteFlower.classList.add("flash");
+            flowerSound.play();
             setTimeout(() => {
                 clearInvertColour();
             }, 200);
@@ -440,6 +453,7 @@ function check() {
     // they have answered incorrectly, and a sting is added to their tally. 
 
     if (good === false) {
+        stingSound.play();
         alert("Ouch! You took Bumble to a poisonous flower, so she stung you!");
         stings++;
         stingsFunction();
@@ -485,6 +499,7 @@ function check() {
 // The topscore element will be updated if the current topscore is less than the one from the game just played.
 
 function loseGame() {
+    loseSound.play();
     alert("You got stung too many times! You need to go to hospital! To play again press start.");
     if (level > document.getElementById("topscorecount").innerHTML) {
         document.getElementById("topscorecount").innerHTML = level;
@@ -502,6 +517,7 @@ function loseGame() {
 // The topscore element will be updated if the current topscore is less than the one from the game just played.
 
 function winGame() {
+    winSound.play();
     alert("Well done! Bumble has enough honey for winter now! You WIN :) ");
     clearInterval(intervalId);
     stings = 0;
